@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<link rel="dns-prefetch" href="https://fast.appcues.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link href="./formulario.component.css" rel="stylesheet" type="text/css">
+
+<body>
+  <div class="login">
+    <h1>Bienvenid@</h1>
+    <form>
+      <input type="text" #input [(ngModel)]="user" name="u" placeholder="Usuario" required="required" />
+      <input type="password" #password [(ngModel)]="pass" name="p" placeholder="Contraseña" required="required" />
+      <span class="rojo" *ngIf="!isCorrectLogin">El nombre de usuario o contraseña no son correctos</span>
+      <button type="submit" (click)="comprobarUsuario({nombre: input.value, password: password.value})"
+        class="btn btn-primary btn-block btn-large">Log In</button>
+    </form>
+  </div>
+
+
+</body>
+
+</html>
